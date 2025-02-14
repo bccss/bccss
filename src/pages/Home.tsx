@@ -15,7 +15,7 @@ export const Home = () => {
   const [showCursor, setShowCursor] = useState(true);
   const [typingComplete, setTypingComplete] = useState(false);
   
-  // Static links, need to fill these in 
+  // static links, need to fill these in 
   const links = [
     { path: '/about', label: 'about BCCSS' },
     { path: '/team', label: 'our team' },
@@ -54,27 +54,27 @@ export const Home = () => {
   return (
     <div className="min-h-screen bg-font-gray p-2 sm:p-4 lg:p-8 flex flex-col">
       <div className="p-8 sm:p-4 lg:p-8 max-w-6xl mx-auto w-full flex-grow">
-        {/* Terminal window with retro styling */}
+        {/* terminal window with retro styling */}
         <div className="border-2 border-gray-600 rounded shadow-lg overflow-hidden">
-          {/* Terminal header - classic MacOS/Linux style */}
+          {/* terminal header - classic MacOS/Linux style */}
           <div className="bg-gradient-to-b from-gray-300 to-gray-400 px-4 py-2 flex items-center border-b-2 border-gray-600">
-            {/* Left side circles */}
+            {/* left side circles */}
             <div className="flex space-x-2 min-w-[70px]">
               <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full border border-gray-600 bg-red-500"></div>
               <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full border border-gray-600 bg-yellow-500"></div>
               <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full border border-gray-600 bg-green-500"></div>
             </div>
-            {/* Centered title */}
+            {/* centered title */}
             <div className="flex-grow text-center">
-              <span className="font-mono text-xs sm:text-sm lg:text-base text-background-black">BCCSS Terminal - bash</span>
+              <span className="font-mono text-xs sm:text-sm lg:text-lg text-background-black">bccss terminal — zsh</span>
             </div>
           </div>
           
-          {/* Terminal content with responsive text sizing */}
+          {/* terminal content with responsive text sizing */}
           <div className="p-2 sm:p-4 lg:p-8 font-mono text-primary-green bg-background-black min-h-[70vh] sm:min-h-[75vh] lg:min-h-[85vh] shadow-inner">
-            {/* Adjust base text sizes for better mobile display */}
+            {/* adjust base text sizes for better mobile display */}
             <div className="text-sm sm:text-base lg:text-xl xl:text-2xl space-y-4">
-              {/* Command prompt with text-wrap handling */}
+              {/* command prompt with text-wrap handling */}
               <div className="break-words">
                 <span className="text-blue-400">user@bccss</span>
                 <span className="text-font-gray">:</span>
@@ -83,13 +83,13 @@ export const Home = () => {
                 <span className="text-primary-green">./welcome.sh</span>
               </div>
 
-              {/* Welcome text with overflow handling */}
+              {/* welcome text with overflow handling */}
               <pre className="whitespace-pre-wrap font-bold break-words">
                 {text}
                 {showCursor && <span className="animate-pulse">█</span>}
               </pre>
               
-              {/* Navigation links with better mobile handling */}
+              {/* navigation links with better mobile handling */}
               {typingComplete && (
                 <div className="space-y-2 sm:space-y-4">
                   {links.map((link, index) => (
@@ -118,7 +118,7 @@ export const Home = () => {
         </div>
       </div>
       
-      {/* Footer with retro styling */}
+      {/* footer with retro styling */}
       <footer className="text-center py-4 text-xs sm:text-sm lg:text-base xl:text-lg font-mono text-gray-800">
         <span className="bg-gray-300 px-3 py-1 rounded border border-gray-600 shadow-sm hover:shadow-inner transition-shadow duration-200">
           Made with <span className="text-red-500">♥</span> @ Boston College
