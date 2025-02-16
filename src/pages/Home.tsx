@@ -31,7 +31,6 @@ export const Home = () => {
     
     const typing = setInterval(() => {
       if (index < welcomeText.length) {
-        // grab text one character at a time 
         setText(welcomeText.slice(0, index + 1));
         index++;
       } else {
@@ -40,7 +39,6 @@ export const Home = () => {
       }
     }, 50);
 
-    // blink the cursor after typing 
     const cursor = setInterval(() => {
       setShowCursor(prev => !prev);
     }, 500);
@@ -52,30 +50,32 @@ export const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-font-gray p-2 sm:p-4 lg:p-8 flex flex-col">
-      <div className="p-8 sm:p-4 lg:p-8 max-w-6xl mx-auto w-full flex-grow">
-        {/* terminal window with retro styling */}
-        <div className="border-2 border-gray-600 rounded shadow-lg overflow-hidden">
-          {/* terminal header - classic MacOS/Linux style */}
-          <div className="bg-gradient-to-b from-gray-300 to-gray-400 px-4 py-2 flex items-center border-b-2 border-gray-600">
+    <div className="min-h-screen bg-font-gray px-4 py-4 flex flex-col justify-center">
+      <div className="max-w-6xl w-full mx-auto flex-grow flex items-center">
+        <div className="border-2 border-gray-600 rounded-lg shadow-lg overflow-hidden w-full">
+          {/* terminal Header */}
+          <div className="bg-gradient-to-b from-gray-300 to-gray-400 px-4 py-2 flex items-center justify-between border-b-2 border-gray-600">
             {/* left side circles */}
-            <div className="flex space-x-2 min-w-[70px]">
-              <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full border border-gray-600 bg-red-500"></div>
-              <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full border border-gray-600 bg-yellow-500"></div>
-              <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full border border-gray-600 bg-green-500"></div>
+            <div className="flex space-x-2">
+              <div className="w-3 h-3 rounded-full border border-gray-600 bg-red-500"></div>
+              <div className="w-3 h-3 rounded-full border border-gray-600 bg-yellow-500"></div>
+              <div className="w-3 h-3 rounded-full border border-gray-600 bg-green-500"></div>
             </div>
             {/* centered title */}
             <div className="flex-grow text-center">
-              <span className="font-mono text-xs sm:text-sm lg:text-lg text-background-black">bccss terminal — zsh</span>
+              <span className="font-mono text-xs sm:text-sm text-background-black">
+                bccss terminal — zsh
+              </span>
             </div>
+            {/* right spacer to balance the header */}
+            <div className="w-8"></div>
           </div>
           
-          {/* terminal content with responsive text sizing */}
-          <div className="p-2 sm:p-4 lg:p-8 font-mono text-primary-green bg-background-black min-h-[70vh] sm:min-h-[75vh] lg:min-h-[85vh] shadow-inner">
-            {/* adjust base text sizes for better mobile display */}
-            <div className="text-sm sm:text-base lg:text-xl xl:text-2xl space-y-4">
-              {/* command prompt with text-wrap handling */}
-              <div className="break-words">
+          {/* terminal Content */}
+          <div className="p-2 sm:p-4 font-mono text-primary-green bg-background-black min-h-[40vh] shadow-inner">
+            <div className="text-sm sm:text-base lg:text-lg space-y-4 w-full">
+              {/* command prompt line - add flex and better width management */}
+              <div className="flex flex-wrap items-center gap-1">
                 <span className="text-blue-400">user@bccss</span>
                 <span className="text-font-gray">:</span>
                 <span className="text-blue-300">~</span>
@@ -83,15 +83,15 @@ export const Home = () => {
                 <span className="text-primary-green">./welcome.sh</span>
               </div>
 
-              {/* welcome text with overflow handling */}
-              <pre className="whitespace-pre-wrap font-bold break-words">
+              {/* welcome message - improve wrapping behavior */}
+              <pre className="whitespace-pre-wrap font-bold break-words w-full">
                 {text}
                 {showCursor && <span className="animate-pulse">█</span>}
               </pre>
               
-              {/* navigation links with better mobile handling */}
+              {/* navigation links - improve responsive layout */}
               {typingComplete && (
-                <div className="space-y-2 sm:space-y-4">
+                <div className="space-y-2 w-full">
                   {links.map((link, index) => (
                     <div 
                       key={index} 
@@ -99,7 +99,7 @@ export const Home = () => {
                     >
                       <Link 
                         to={link.path} 
-                        className="block break-words pb-1 pt-1 sm:pb-2 sm:pt-2"
+                        className="flex flex-wrap items-center gap-1 py-1"
                       >
                         <span className="text-blue-400">user@bccss</span>
                         <span className="text-font-gray">:</span>
@@ -118,8 +118,8 @@ export const Home = () => {
         </div>
       </div>
       
-      {/* footer with retro styling */}
-      <footer className="text-center py-4 text-xs sm:text-sm lg:text-base xl:text-lg font-mono text-gray-800">
+      {/* bccss footer */}
+      <footer className="text-center py-4 text-xs sm:text-sm font-mono text-gray-800">
         <span className="bg-gray-300 px-3 py-1 rounded border border-gray-600 shadow-sm hover:shadow-inner transition-shadow duration-200">
           Made with <span className="text-red-500">♥</span> @ Boston College
         </span>
