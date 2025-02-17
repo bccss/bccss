@@ -24,25 +24,40 @@ export const Home = () => {
     { path: '/example', label: 'rafael signer' }
   ];
 
-  // simulate the welcome message being typed 
-  useEffect(() => {
-    const welcomeText = '$ Boston College\n$ Computer Science Society';
+  const splashText = `
+  ######    #####    #####    #####    #####  
+  #     #  #     #  #     #  #     #  #     # 
+  #     #  #        #        #        #       
+  ######   #        #         #####    #####  
+  #     #  #        #              #        # 
+  #     #  #     #  #     #  #     #  #     # 
+  ######    #####    #####    #####    #####  
+`
+
+// simulate the welcome message being typed 
+useEffect(() => {
     let index = 0;
+    let typing: number;
+    let cursor: number;
+    const welcomeText = './welcome.sh'
+
+    setTimeout(() => {
+      typing = setInterval(() => {
+        if (index < welcomeText.length) {
+          setText(welcomeText.slice(0, index + 1));
+          index++;
+        } else {
+          clearInterval(typing);
+          setTypingComplete(true);
+        }
+      }, 50);
+      
+      cursor = setInterval(() => {
+        setShowCursor(prev => !prev);
+      }, 1000);
+    }, 500)
+
     
-    const typing = setInterval(() => {
-      if (index < welcomeText.length) {
-        setText(welcomeText.slice(0, index + 1));
-        index++;
-      } else {
-        clearInterval(typing);
-        setTypingComplete(true);
-      }
-    }, 50);
-
-    const cursor = setInterval(() => {
-      setShowCursor(prev => !prev);
-    }, 500);
-
     return () => {
       clearInterval(typing);
       clearInterval(cursor);
@@ -73,21 +88,25 @@ export const Home = () => {
           
           {/* terminal Content */}
           <div className="p-2 sm:p-4 font-mono text-primary-green bg-background-black min-h-[40vh] shadow-inner">
-            <div className="text-sm sm:text-base lg:text-lg space-y-4 w-full">
+            <div className="text-sm sm:text-base lg:text-lg w-full">
               {/* command prompt line - add flex and better width management */}
               <div className="flex flex-wrap items-center gap-1">
                 <span className="text-blue-400">user@bccss</span>
                 <span className="text-font-gray">:</span>
                 <span className="text-blue-300">~</span>
                 <span className="text-font-gray">$ </span>
-                <span className="text-primary-green">./welcome.sh</span>
+                <span className="text-primary-green">
+                  {text}
+                  {showCursor && <span className="animate-pulse">█</span>}
+                </span>
               </div>
 
               {/* welcome message - improve wrapping behavior */}
-              <pre className="whitespace-pre-wrap font-bold break-words w-full">
-                {text}
-                {showCursor && <span className="animate-pulse">█</span>}
-              </pre>
+              {typingComplete && (
+                <pre className="whitespace-pre-wrap font-bold break-words w-full">
+                  {splashText}
+                </pre>
+              )}
               
               {/* navigation links - improve responsive layout */}
               {typingComplete && (
