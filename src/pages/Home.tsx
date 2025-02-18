@@ -32,7 +32,7 @@ export const Home = () => {
   #     #  #        #              #        # 
   #     #  #     #  #     #  #     #  #     # 
   ######    #####    #####    #####    #####  
-`
+`;
 
 // simulate the welcome message being typed 
 useEffect(() => {
@@ -41,33 +41,34 @@ useEffect(() => {
     let cursor: number;
     const welcomeText = './welcome.sh'
 
-    setTimeout(() => {
-      typing = setInterval(() => {
+    const startTyping = setTimeout(() => {
+      typing = window.setInterval(() => {
         if (index < welcomeText.length) {
-          setText(welcomeText.slice(0, index + 1));
+          setText(prev => welcomeText.slice(0, index + 1));
           index++;
         } else {
           clearInterval(typing);
           setTypingComplete(true);
         }
-      }, 50);
+      }, 75);
       
-      cursor = setInterval(() => {
+      cursor = window.setInterval(() => {
         setShowCursor(prev => !prev);
-      }, 1000);
-    }, 500)
+      }, 530);
+    }, 300);
 
     
     return () => {
+      clearTimeout(startTyping);
       clearInterval(typing);
       clearInterval(cursor);
     };
   }, []);
 
   return (
-    <div className="min-h-screen bg-font-gray px-4 py-4 flex flex-col justify-center">
-      <div className="max-w-6xl w-full mx-auto flex-grow flex items-center">
-        <div className="border-2 border-gray-600 rounded-lg shadow-lg overflow-hidden w-full">
+    <div className="min-h-screen bg-font-gray flex flex-col">
+      <div className="flex-1 p-2 sm:p-4 md:p-6 flex items-center justify-center">
+        <div className="w-full h-full max-w-7xl border-2 border-gray-600 rounded-lg shadow-lg overflow-hidden">
           {/* terminal Header */}
           <div className="bg-gradient-to-b from-gray-300 to-gray-400 px-4 py-2 flex items-center justify-between border-b-2 border-gray-600">
             {/* left side circles */}
@@ -87,10 +88,10 @@ useEffect(() => {
           </div>
           
           {/* terminal Content */}
-          <div className="p-2 sm:p-4 font-mono text-primary-green bg-background-black min-h-[40vh] shadow-inner">
-            <div className="text-sm sm:text-base lg:text-lg w-full">
+          <div className="p-2 sm:p-4 font-mono text-primary-green bg-background-black h-[85vh] overflow-y-auto">
+            <div className="h-full flex flex-col">
               {/* command prompt line - add flex and better width management */}
-              <div className="flex flex-wrap items-center gap-1">
+              <div className="flex flex-wrap items-center gap-1 text-sm sm:text-base">
                 <span className="text-blue-400">user@bccss</span>
                 <span className="text-font-gray">:</span>
                 <span className="text-blue-300">~</span>
@@ -101,16 +102,16 @@ useEffect(() => {
                 </span>
               </div>
 
-              {/* welcome message - improve wrapping behavior */}
+              {/* welcome message - improve size on small screens */}
               {typingComplete && (
-                <pre className="whitespace-pre-wrap font-bold break-words w-full">
+                <pre className="my-4 whitespace-pre text-[0.75rem] sm:text-xs md:text-sm lg:text-base xl:text-lg font-bold overflow-x-auto">
                   {splashText}
                 </pre>
               )}
               
               {/* navigation links - improve responsive layout */}
               {typingComplete && (
-                <div className="space-y-2 w-full">
+                <div className="space-y-1 sm:space-y-2 text-md sm:text-base">
                   {links.map((link, index) => (
                     <div 
                       key={index} 
@@ -138,7 +139,7 @@ useEffect(() => {
       </div>
       
       {/* bccss footer */}
-      <footer className="text-center py-4 text-xs sm:text-sm font-mono text-gray-800">
+      <footer className="p-4 text-center text-xs sm:text-sm font-mono text-gray-800">
         <span className="bg-gray-300 px-3 py-1 rounded border border-gray-600 shadow-sm hover:shadow-inner transition-shadow duration-200">
           Made with <span className="text-red-500">♥</span> @ Boston College
         </span>
