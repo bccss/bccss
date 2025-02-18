@@ -10,10 +10,14 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+// animation expiration time (currently set to 1 day)
+const EXPIRATION_TIME = 24 * 60 * 60 * 1000
+
 export const Home = () => {
   const [text, setText] = useState('');
   const [showCursor, setShowCursor] = useState(true);
   const [typingComplete, setTypingComplete] = useState(false);
+  const [animationSeen, setAnimationSeen] = useState(false);
   
   // static links, need to fill these in 
   const links = [
@@ -34,36 +38,53 @@ export const Home = () => {
   ######    #####    #####    #####    #####  
 `;
 
-// simulate the welcome message being typed 
-useEffect(() => {
+  // simulate the welcome message being typed 
+  useEffect(() => {
     let index = 0;
     let typing: number;
     let cursor: number;
     const welcomeText = './welcome.sh'
 
-    const startTyping = setTimeout(() => {
-      typing = window.setInterval(() => {
-        if (index < welcomeText.length) {
-          setText(prev => welcomeText.slice(0, index + 1));
-          index++;
-        } else {
-          clearInterval(typing);
-          setTypingComplete(true);
-        }
-      }, 75);
-      
-      cursor = window.setInterval(() => {
-        setShowCursor(prev => !prev);
-      }, 530);
-    }, 300);
+    const seenObj = localStorage.getItem("seen")
+    if (seenObj) {
+      const { seen, expirationDate } = JSON.parse(seenObj)
+      const animationSeenExpired = (new Date()).getTime() > Date.parse(expirationDate)
+      if (seen && !animationSeenExpired) {
+        setAnimationSeen(true)
+      }
+    }
 
-    
-    return () => {
-      clearTimeout(startTyping);
-      clearInterval(typing);
-      clearInterval(cursor);
-    };
-  }, []);
+    if (!animationSeen) {
+      const startTyping = setTimeout(() => {
+        typing = window.setInterval(() => {
+          if (index < welcomeText.length) {
+            setText(welcomeText.slice(0, index + 1));
+            index++;
+          } else {
+            clearInterval(typing);
+            setTypingComplete(true);
+          }
+        }, 75)
+        
+        cursor = window.setInterval(() => {
+          setShowCursor(prev => !prev);
+        }, 530);
+        const expirationDate = (new Date()).getTime() + EXPIRATION_TIME
+        const seenObj = {
+          seen: "true",
+          expirationDate,
+        }
+        localStorage.setItem("seen", JSON.stringify(seenObj))
+      }, 300);
+        return () => {
+          clearTimeout(startTyping)
+          clearInterval(typing);
+          clearInterval(cursor);
+        }
+    } else {
+      setText(welcomeText)
+    }
+  }, [animationSeen]);
 
   return (
     <div className="min-h-screen bg-font-gray flex flex-col">
@@ -103,14 +124,14 @@ useEffect(() => {
               </div>
 
               {/* welcome message */}
-              {typingComplete && (
+              {(typingComplete || animationSeen) && (
                 <pre className="my-4 whitespace-pre text-[0.75rem] sm:text-xs md:text-sm lg:text-base xl:text-lg font-bold overflow-x-auto">
                   {splashText}
                 </pre>
               )}
               
               {/* navigation links - updated with responsive text */}
-              {typingComplete && (
+              {(typingComplete || animationSeen) && (
                 <div className="space-y-1 sm:space-y-2 text-md sm:text-lg md:text-2xl">
                   {links.map((link, index) => (
                     <div 
