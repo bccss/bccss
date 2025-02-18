@@ -49,6 +49,7 @@ export const Join = () => {
           Get in Touch!
         </h2>
         <div className="max-w-[700px] mx-auto">
+          {/*note: icon coloring is done in each svg file - theres definitely another way to do this*/}
           <div className="rounded-lg flex items-center justify-center p-4 gap-8">
             <img src={slack} alt="slack icon" className="w-11 h-11"/>
             <img src={insta} alt="insta icon" className="w-14 h-14"/>
