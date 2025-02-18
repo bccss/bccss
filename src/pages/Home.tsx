@@ -90,8 +90,8 @@ useEffect(() => {
           {/* terminal Content */}
           <div className="p-2 sm:p-4 font-mono text-primary-green bg-background-black h-[85vh] overflow-y-auto">
             <div className="h-full flex flex-col">
-              {/* command prompt line - add flex and better width management */}
-              <div className="flex flex-wrap items-center gap-1 text-sm sm:text-base">
+              {/* command prompt line - updating size to match navigation */}
+              <div className="flex flex-wrap items-center gap-1 text-md sm:text-lg md:text-2xl">
                 <span className="text-blue-400">user@bccss</span>
                 <span className="text-font-gray">:</span>
                 <span className="text-blue-300">~</span>
@@ -102,16 +102,16 @@ useEffect(() => {
                 </span>
               </div>
 
-              {/* welcome message - improve size on small screens */}
+              {/* welcome message */}
               {typingComplete && (
                 <pre className="my-4 whitespace-pre text-[0.75rem] sm:text-xs md:text-sm lg:text-base xl:text-lg font-bold overflow-x-auto">
                   {splashText}
                 </pre>
               )}
               
-              {/* navigation links - improve responsive layout */}
+              {/* navigation links - updated with responsive text */}
               {typingComplete && (
-                <div className="space-y-1 sm:space-y-2 text-md sm:text-base">
+                <div className="space-y-1 sm:space-y-2 text-md sm:text-lg md:text-2xl">
                   {links.map((link, index) => (
                     <div 
                       key={index} 
