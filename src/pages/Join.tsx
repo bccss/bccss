@@ -1,4 +1,10 @@
 import '../index.css'
+import joinPhoto from '../assets/joinphoto.png'
+import slack from '../assets/slacksvg.svg'
+import insta from '../assets/instasvg.svg'
+import mail from '../assets/mailsvg.svg'
+import discord from '../assets/discordsvg.svg'
+
 export const Join = () => {
   return (
     <div className="min-h-screen bg-backgroundBlack p-8">
@@ -8,7 +14,7 @@ export const Join = () => {
 
       {/* board photo? community photo? */}
       <div className="max-w-2xl mx-auto mb-16">
-        <img src="#" alt="cool photo man" className="w-full rounded-lg"/>
+        <img src={joinPhoto} alt="photo" className="w-full rounded-lg"/>
       </div>
 
       {/* Calendar Section */}
@@ -17,19 +23,19 @@ export const Join = () => {
           Add Our Calendar
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-10 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-10 md:gap-8">
           {/* Text Column */}
-          <div className="space-y-4 col-span-3">
+          <div className="space-y-4 col-span-3 text-center pb-8 md:text-left">
             <p className="font-body"> {/* actual text says what */}
-              lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+               Click the plus in the bottom right and follow the link to add our calendar to your Google Calendar. This is a great way to stay connected with us and never miss an event!
             </p>
           </div>
           {/* Calendar Embed Column */}
           <div className="h-[450px] bg-white/10 rounded-lg col-span-7">
             {/* Replace with actual Google Calendar embed */}
             <iframe 
-              src="https://calendar.google.com/calendar/embed?src=c_38182a0bf0baa4187042244866d480f737a02c57a92d89437c0d74c4170de0f8%40group.calendar.google.com&ctz=America%2FNew_York"
-              className="w-full h-full rounded-lg"
+              src="https://calendar.google.com/calendar/embed?src=bccssociety%40gmail.com&ctz=America%2FNew_York"
+              className="w-full h-full rounded-lg bg-backgroundBlack"
               frameBorder="0"
               scrolling="no"
               title="BCCSS Calendar"
@@ -42,20 +48,12 @@ export const Join = () => {
         <h2 className="text-3xl text-secondaryTeal font-header font-bold mb-8 text-center">
           Get in Touch!
         </h2>
-        {/* suggestion: make a component for reuse / consistency throughout site? */}
-        <div className="grid grid-cols-2 gap-8 max-w-[400px] mx-auto">
-          <div className="bg-white/10 rounded-full aspect-square flex items-center justify-center">
-            <img src="#" alt="slack icon" className="w-12 h-12"/>
-          </div>
-          <div className="bg-white/10 rounded-full aspect-square flex items-center justify-center">
-            <img src="#" alt="insta icon" className="w-12 h-12"/>
-          </div>
-          <div className="bg-white/10 rounded-full aspect-square flex items-center justify-center">
-            <img src="#" alt="email icon" className="w-12 h-12"/>
-          </div>
-          {/* do we have a discord ? i hope so i fw squares */}
-          <div className="bg-white/10 rounded-full aspect-square flex items-center justify-center">
-            <img src="#" alt="discord icon" className="w-12 h-12"/>
+        <div className="max-w-[700px] mx-auto">
+          <div className="rounded-lg flex items-center justify-center p-4 gap-8">
+            <img src={slack} alt="slack icon" className="w-11 h-11"/>
+            <img src={insta} alt="insta icon" className="w-14 h-14"/>
+            <img src={mail} alt="mail icon" className="w-12 h-12"/>
+            <img src={discord} alt="discord icon" className="w-12 h-12"/>
           </div>
         </div>
       </div>
