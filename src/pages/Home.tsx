@@ -23,7 +23,6 @@ export const Home = () => {
   // static links, need to fill these in 
   const links = [
     { path: '/about', label: 'about BCCSS' },
-    { path: '/team', label: 'our team' },
     { path: '/join', label: 'get involved' },
   ];
 
@@ -214,7 +213,7 @@ BBBBBBBBBBBBBBBBB           CCCCCCCCCCCCC       CCCCCCCCCCCCC SSSSSSSSSSSSSSS   
                          className="flex items-center gap-2 hover:bg-gray-800 p-2 rounded transition-colors">
                         <span className="text-fontGray">$</span> <span className="text-primaryGreen">join</span> <span className="text-blue-300">https://bccss.slack.com/</span>
                       </a>
-                      <a href="/calendar" 
+                      <a href="https://calendar.google.com/calendar/u/0/embed?src=bccssociety@gmail.com&ctz=America/New_York" 
                          className="flex items-center gap-2 hover:bg-gray-800 p-2 rounded transition-colors">
                         <span className="text-fontGray">$</span> <span className="text-primaryGreen">cat</span> <span className="text-blue-300">upcoming_events.txt</span>
                       </a>
