@@ -10,8 +10,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-// animation expiration time (currently set to 1 day)
-const EXPIRATION_TIME = 24 * 60 * 60 * 1000
+// animation expiration time (currently set to 5 minutes)
+const EXPIRATION_TIME = 5 * 60 * 1000
 
 export const Home = () => {
   const [text, setText] = useState('');
@@ -55,7 +55,7 @@ BBBBBBBBBBBBBBBBB           CCCCCCCCCCCCC       CCCCCCCCCCCCC SSSSSSSSSSSSSSS   
     const seenObj = localStorage.getItem("seen")
     if (seenObj) {
       const { seen, expirationDate } = JSON.parse(seenObj)
-      const animationSeenExpired = (new Date()).getTime() > Date.parse(expirationDate)
+      const animationSeenExpired = (new Date()).getTime() > expirationDate
       if (seen && !animationSeenExpired) {
         setAnimationSeen(true)
       }
