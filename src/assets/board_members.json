@@ -1,0 +1,93 @@
+[
+    {
+        "name": "Julia Yang",
+        "title": "Co-President",
+        "linkedin": "",
+        "github": "https://github.com/juliayang",
+        "image": "board/julia_yang.JPG"
+    },
+    {
+        "name": "Hunter Scheppat",
+        "title": "Co-President",
+        "linkedin": "",
+        "github": "https://github.com/hunterschep",
+        "image": "board/hunter_scheppat.jpeg"
+    },
+    {
+        "name": "Aimee Hong",
+        "title": "Events Team Lead",
+        "linkedin": "",
+        "github": "https://github.com/aimeehong1",
+        "image": "board/aimee_hong.jpeg"
+    },
+    {
+        "name": "Andy Bello",
+        "title": "Events Team",
+        "linkedin": "",
+        "github": "https://github.com/andybello28",
+        "image": "board/andy_bello.jpeg"
+    },
+    {
+        "name": "Audrey Xiao",
+        "title": "Events Team",
+        "linkedin": "",
+        "github": "",
+        "image": "board/audrey_xiao.JPG"
+    },
+    {
+        "name": "Rafael Singer",
+        "title": "Tech Team Lead",
+        "linkedin": "",
+        "github": "https://github.com/rafaelsinger",
+        "image": "board/rafael_singer.jpeg"
+    },
+    {
+        "name": "Talia Kusmerik",
+        "title": "Tech Team",
+        "linkedin": "",
+        "github": "",
+        "image": "board/talia_kusmerik.png"
+    },
+    {
+        "name": "Nathan Thai",
+        "title": "Tech Team",
+        "linkedin": "",
+        "github": "",
+        "image": "board/nathaniel_thai.jpeg"
+    },
+    {
+        "name": "Nathan Banketa",
+        "title": "Marketing Team Lead",
+        "linkedin": "",
+        "github": "https://github.com/nathanbanketa",
+        "image": "board/nathan_banketa.jpg"
+    },
+    {
+        "name": "Catherine Hou",
+        "title": "Marketing Team",
+        "linkedin": "",
+        "github": "https://github.com/houcb",
+        "image": "board/catherine_hou.jpeg"
+    },
+    {
+        "name": "Wesay Okungbowa",
+        "title": "Marketing Team",
+        "linkedin": "",
+        "github": "https://github.com/stormyBlueclouds",
+        "image": "board/wesay_okungbowa.jpg"
+    },
+    {
+        "name": "Austin Chan-Orsini",
+        "title": "Marketing Team",
+        "linkedin": "",
+        "github": "",
+        "image": "board/austin_chan-orsini.jpeg"
+    },
+    {
+        "name": "Aidan O’Neill",
+        "title": "Treasurer",
+        "linkedin": "",
+        "github": "https://github.com/oneillgq",
+        "image": "board/aidan_o-neill"
+    }
+]
