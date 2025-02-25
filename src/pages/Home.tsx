@@ -24,18 +24,25 @@ export const Home = () => {
     { path: '/about', label: 'about BCCSS' },
     { path: '/team', label: 'our team' },
     { path: '/join', label: 'get involved' },
-    { path: '/example', label: 'fanum tax' },
-    { path: '/example', label: 'rafael signer' }
   ];
 
   const splashText = `
-  ######    #####    #####    #####    #####  
-  #     #  #     #  #     #  #     #  #     # 
-  #     #  #        #        #        #       
-  ######   #        #         #####    #####  
-  #     #  #        #              #        # 
-  #     #  #     #  #     #  #     #  #     # 
-  ######    #####    #####    #####    #####  
+BBBBBBBBBBBBBBBBB           CCCCCCCCCCCCC       CCCCCCCCCCCCC   SSSSSSSSSSSSSSS    SSSSSSSSSSSSSSS 
+B::::::::::::::::B       CCC::::::::::::C    CCC::::::::::::C SS:::::::::::::::S SS:::::::::::::::S
+B::::::BBBBBB:::::B    CC:::::::::::::::C  CC:::::::::::::::CS:::::SSSSSS::::::SS:::::SSSSSS::::::S
+BB:::::B     B:::::B  C:::::CCCCCCCC::::C C:::::CCCCCCCC::::CS:::::S     SSSSSSSS:::::S     SSSSSSS
+  B::::B     B:::::B C:::::C       CCCCCCC:::::C       CCCCCCS:::::S            S:::::S            
+  B::::B     B:::::BC:::::C             C:::::C              S:::::S            S:::::S            
+  B::::BBBBBB:::::B C:::::C             C:::::C               S::::SSSS          S::::SSSS         
+  B:::::::::::::BB  C:::::C             C:::::C                SS::::::SSSSS      SS::::::SSSSS    
+  B::::BBBBBB:::::B C:::::C             C:::::C                  SSS::::::::SS      SSS::::::::SS  
+  B::::B     B:::::BC:::::C             C:::::C                     SSSSSS::::S        SSSSSS::::S 
+  B::::B     B:::::BC:::::C             C:::::C                          S:::::S            S:::::S
+  B::::B     B:::::B C:::::C       CCCCCCC:::::C       CCCCCC            S:::::S            S:::::S
+BB:::::BBBBBB::::::B  C:::::CCCCCCCC::::C C:::::CCCCCCCC::::CSSSSSSS     S:::::SSSSSSSS     S:::::S
+B:::::::::::::::::B    CC:::::::::::::::C  CC:::::::::::::::CS::::::SSSSSS:::::SS::::::SSSSSS:::::S
+B::::::::::::::::B       CCC::::::::::::C    CCC::::::::::::CS:::::::::::::::SS S:::::::::::::::SS 
+BBBBBBBBBBBBBBBBB           CCCCCCCCCCCCC       CCCCCCCCCCCCC SSSSSSSSSSSSSSS    SSSSSSSSSSSSSSS   
 `;
 
   // simulate the welcome message being typed 
@@ -125,7 +132,7 @@ export const Home = () => {
 
               {/* welcome message */}
               {(typingComplete || animationSeen) && (
-                <pre className="my-4 whitespace-pre text-[0.75rem] sm:text-xs md:text-sm lg:text-base xl:text-lg font-bold overflow-x-auto">
+                <pre className="my-4 whitespace-pre text-[0.35rem] xs:text-[0.40rem] sm:text-[0.50rem] md:text-[0.60rem] lg:text-[0.75rem] font-bold overflow-x-auto">
                   {splashText}
                 </pre>
               )}
