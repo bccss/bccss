@@ -1,7 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@400;600;700&display=swap');
 @import "tailwindcss";
-@theme {
-    --color-primary-green: #13B37F;
-    --color-secondary-teal: #15B8A6;
-    --color-background-black: #060522;
-    --color-font-gray: #C0CAD7;
+
+:root {
+    --color-primaryGreen: #35d2a1;
+    --color-secondaryTeal: #15B8A6;
+    --color-backgroundBlack: #060522;
+    --color-fontGray: #C0CAD7;
+
+    --font-header: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+body {
+    font-family: var(--font-body); 
+    background-color: var(--color-backgroundBlack);
+    color: var(--color-fontGray);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-header);
+}
+
+.bg-backgroundBlack {
+    background-color: var(--color-backgroundBlack);
+}
+
+.text-backgroundBlack {
+    color: var(--color-backgroundBlack);
+}
+.text-fontGray {
+    color: var(--color-fontGray);
+}
+
+.text-primaryGreen {
+    color: var(--color-primaryGreen);
+}
+
+.text-secondaryTeal {
+    color: var(--color-secondaryTeal);
 }
