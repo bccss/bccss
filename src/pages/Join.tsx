@@ -52,16 +52,16 @@ export const Join = () => {
           {/*note: discord link, mail is not working rn bc we don't have one*/}
           <div className="rounded-lg flex items-center justify-center p-4 gap-8">
             <a href="https://bccss.slack.com" target="_blank" rel="noopener noreferrer">
-              <img src={slack} alt="slack icon" className="w-11 h-11"/>
+              <img src={slack} alt="slack icon" className="w-11 h-11 md:w-15 md:h-15 lg:w-18 lg:h-18"/>
             </a>
             <a href="https://www.instagram.com/bccssociety/" target="_blank" rel="noopener noreferrer">
-              <img src={insta} alt="insta icon" className="w-14 h-14"/>
+              <img src={insta} alt="insta icon" className="w-14 h-14 md:w-18 md:h-18 lg:w-21 lg:h-21"/>
             </a>
             <a href="mailto:#">
-              <img src={mail} alt="mail icon" className="w-12 h-12"/>
+              <img src={mail} alt="mail icon" className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"/>
             </a>
             <a href="#" target="_blank" rel="noopener noreferrer">
-              <img src={discord} alt="discord icon" className="w-12 h-12"/>
+              <img src={discord} alt="discord icon" className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"/>
             </a>
           </div>
         </div>
