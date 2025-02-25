@@ -1,7 +1,8 @@
 import about_club_photo from '/about_club_photo.jpg';
 import '../index.css';
-import boardMembers from '../../board_members.json';
+import boardMembers from '../../board_members.json'; 
 import { ImageCarousel } from "../../src/components/ImageCarousel";
+import { useEffect } from 'react'
 
 type BoardMember = {
     name: string;
@@ -12,7 +13,10 @@ type BoardMember = {
 const eBoardMembers: BoardMember[] = boardMembers;
 
 export const About = () => {
-  return (
+    useEffect(() => {
+        document.title = 'BCCSS | About'
+    }, [])
+    return (
     <div className="bg-backgroundBlack text-fontGray w-full min-h-screen mx-auto px-4 sm:px-8">
         {/* Navigation here */}
 
@@ -51,7 +55,7 @@ export const About = () => {
 
         {/* Image Carousel */}
         <div className="my-24 max-w-screen-lg mx-auto">
-            <ImageCarousel />
+            {/*<ImageCarousel />*/}
         </div>
 
         {/* EBoard */}
