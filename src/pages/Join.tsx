@@ -27,12 +27,11 @@ export const Join = () => {
           {/* Text Column */}
           <div className="space-y-4 col-span-3 text-center pb-8 md:text-left">
             <p className="font-body"> {/* actual text says what */}
-               Click the plus in the bottom right and follow the link to add our calendar to your Google Calendar. This is a great way to stay connected with us and never miss an event!
+               Click the plus in the bottom right and follow the link to add our calendar to your Google Calendar. This is a great way to stay connected with us and never miss any of our great events!
             </p>
           </div>
           {/* Calendar Embed Column */}
           <div className="h-[450px] bg-white/10 rounded-lg col-span-7">
-            {/* Replace with actual Google Calendar embed */}
             <iframe 
               src="https://calendar.google.com/calendar/embed?src=bccssociety%40gmail.com&ctz=America%2FNew_York"
               className="w-full h-full rounded-lg bg-backgroundBlack"
@@ -50,11 +49,20 @@ export const Join = () => {
         </h2>
         <div className="max-w-[700px] mx-auto">
           {/*note: icon coloring is done in each svg file - theres definitely another way to do this*/}
+          {/*note: discord link, mail is not working rn bc we don't have one*/}
           <div className="rounded-lg flex items-center justify-center p-4 gap-8">
-            <img src={slack} alt="slack icon" className="w-11 h-11"/>
-            <img src={insta} alt="insta icon" className="w-14 h-14"/>
-            <img src={mail} alt="mail icon" className="w-12 h-12"/>
-            <img src={discord} alt="discord icon" className="w-12 h-12"/>
+            <a href="https://bccss.slack.com" target="_blank" rel="noopener noreferrer">
+              <img src={slack} alt="slack icon" className="w-11 h-11"/>
+            </a>
+            <a href="https://www.instagram.com/bccssociety/" target="_blank" rel="noopener noreferrer">
+              <img src={insta} alt="insta icon" className="w-14 h-14"/>
+            </a>
+            <a href="mailto:#">
+              <img src={mail} alt="mail icon" className="w-12 h-12"/>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img src={discord} alt="discord icon" className="w-12 h-12"/>
+            </a>
           </div>
         </div>
       </div>
