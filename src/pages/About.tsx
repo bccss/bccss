@@ -20,7 +20,7 @@ export const About = () => {
 
             {/* About */}
             <div className="mx-auto py-8 text-left max-w-screen-lg">
-                <h2 className="text-2xl font-bold mb-4 pt-8 text-primaryGreen flex items-center">
+                <h2 className="text-4xl font-bold mb-4 pt-8 text-primaryGreen flex items-center transform hover:scale-105 transition-transform duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6 w-8 h-8 mr-4 text-primaryGreen">
                         <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
                     </svg>
@@ -28,26 +28,46 @@ export const About = () => {
                 </h2>
                 <div className="flex flex-col md:flex-row md:space-x-8 items-center">
                     <div className="flex-1">
-                        <p className="text-font-gray mb-6 mt-4 font-inter">
+                        <p className="text-font-gray mb-6 mt-4 font-inter leading-relaxed hover:text-secondaryTeal transition-colors duration-300">
                             The Boston College Computer Science Society (BCCSS) is dedicated to helping students interested in technology and entrepreneurship to achieve their goals. We host events such as guest lectures, workshops, hackathons, collaborative projects, and more.
                         </p>
-                        <p className="text-font-gray mb-6 font-inter">
+                        <p className="text-font-gray mb-6 font-inter leading-relaxed hover:text-secondaryTeal transition-colors duration-300">
                             We work closely with the Computer Science department at BC to create a better environment for students to learn and find new opportunities. Further, we collaborate with many departments and clubs in the Carroll School of Management at BC to encourage entrepreneurship.
                         </p>
                     </div>
-                    <img src={about_club_photo} className="w-full md:w-1/2 lg:w-1/3 h-auto border-3 border-dashed rounded-lg border-teal-300 bg-transparent mt-4" alt="BCCSS Club Photo" />
+                    <img 
+                        src={about_club_photo} 
+                        className="w-full md:w-1/2 lg:w-1/3 h-auto border-3 border-dashed rounded-lg border-teal-300 bg-transparent mt-4 transform hover:scale-105 transition-transform duration-300 hover:shadow-2xl"
+                        alt="BCCSS Club Photo" 
+                    />
                 </div>
             </div>
 
             {/* Club Stats */}
             <div className="flex flex-wrap justify-center gap-8 my-12 px-4">
-                <div className="group p-6 rounded-xl text-center w-44 md:w-52 text-secondaryTeal border-2 border-teal-300 bg-transparent hover:bg-teal-500 hover:border-teal-400 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-                    <h4 className="text-4xl font-bold group-hover:!text-black mb-2">1000+</h4>
-                    <p className="text-xl font-inter group-hover:!text-black">members</p>
+                <div className="group p-6 rounded-xl text-center w-44 md:w-52 text-secondaryTeal border-2 border-teal-300 bg-transparent hover:bg-teal-500 hover:border-teal-400 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                    <div className="transform group-hover:scale-110 transition-transform duration-300">
+                        <h4 className="text-4xl font-bold group-hover:!text-black mb-2">500+</h4>
+                        <p className="text-xl font-inter group-hover:!text-black">members</p>
+                    </div>
                 </div>
-                <div className="group p-6 rounded-xl text-center w-44 md:w-52 text-secondaryTeal border-2 border-teal-300 bg-transparent hover:bg-teal-500 hover:border-teal-400 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-                    <h4 className="text-4xl font-bold group-hover:!text-black mb-2">34</h4>
-                    <p className="text-xl font-inter group-hover:!text-black">events hosted</p>
+                <div className="group p-6 rounded-xl text-center w-44 md:w-52 text-secondaryTeal border-2 border-teal-300 bg-transparent hover:bg-teal-500 hover:border-teal-400 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                    <div className="transform group-hover:scale-110 transition-transform duration-300">
+                        <h4 className="text-4xl font-bold group-hover:!text-black mb-2">34</h4>
+                        <p className="text-xl font-inter group-hover:!text-black">events hosted</p>
+                    </div>
+                </div>
+                <div className="group p-6 rounded-xl text-center w-44 md:w-52 text-secondaryTeal border-2 border-teal-300 bg-transparent hover:bg-teal-500 hover:border-teal-400 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                    <div className="transform group-hover:scale-110 transition-transform duration-300">
+                        <h4 className="text-4xl font-bold group-hover:!text-black mb-2">9 </h4>
+                        <p className="text-xl font-inter group-hover:!text-black">24-hour hackathons</p>
+                    </div>
+                </div>
+                <div className="group p-6 rounded-xl text-center w-44 md:w-52 text-secondaryTeal border-2 border-teal-300 bg-transparent hover:bg-teal-500 hover:border-teal-400 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                    <div className="transform group-hover:scale-110 transition-transform duration-300">
+                        <h4 className="text-4xl font-bold group-hover:!text-black mb-2">$4,000+</h4>
+                        <p className="text-xl font-inter group-hover:!text-black">in prizes given</p>
+                    </div>
                 </div>
             </div>
 
@@ -58,7 +78,7 @@ export const About = () => {
 
             {/* EBoard */}
             <div className="max-w-screen-lg mx-auto py-20 px-4">
-                <h2 className="text-3xl font-bold mb-8 text-primaryGreen flex items-center justify-center">
+                <h2 className="text-3xl font-bold mb-8 text-primaryGreen flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6 w-8 h-8 mr-3">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
                     </svg>
@@ -66,8 +86,11 @@ export const About = () => {
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
                     {eBoardMembers.map((member, index) => (
-                        <div key={index} className="flex flex-col items-center text-center p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-                            <div className="w-32 h-32 bg-gray-300 rounded-full overflow-hidden mb-4 border-2 border-teal-300">
+                        <div 
+                            key={index} 
+                            className="flex flex-col items-center text-center p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:bg-gray-700"
+                        >
+                            <div className="w-32 h-32 bg-gray-300 rounded-full overflow-hidden mb-4 border-2 border-teal-300 transform hover:scale-110 transition-transform duration-300">
                                 <img src={member.image} className="w-full h-full object-cover" alt={`${member.name} - ${member.title}`} />
                             </div>
                             <h4 className="text-xl font-semibold text-primaryGreen mb-2">{member.name}</h4>
@@ -77,7 +100,7 @@ export const About = () => {
                                     href={member.linkedin} 
                                     target="_blank" 
                                     rel="noopener noreferrer" 
-                                    className="text-secondaryTeal hover:text-teal-400 transition-colors duration-300"
+                                    className="text-secondaryTeal hover:text-teal-400 transition-colors duration-300 transform hover:scale-125"
                                     aria-label={`${member.name}'s LinkedIn`}
                                 >
                                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -88,7 +111,7 @@ export const About = () => {
                                     href={member.github} 
                                     target="_blank" 
                                     rel="noopener noreferrer" 
-                                    className="text-secondaryTeal hover:text-teal-400 transition-colors duration-300"
+                                    className="text-secondaryTeal hover:text-teal-400 transition-colors duration-300 transform hover:scale-125"
                                     aria-label={`${member.name}'s GitHub`}
                                 >
                                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">

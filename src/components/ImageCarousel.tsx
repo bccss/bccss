@@ -5,11 +5,16 @@ import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
 
 const images = [
+  "events/IMG_6051.jpg",
+  "events/IMG_7234.jpg",
   "events/IMG_7323.jpg",
   "events/IMG_7347.jpg",
+  "events/IMG_7355.jpg",
+  "events/IMG_7367.jpg",
   "events/IMG_7434.jpg",
   "events/IMG_7503.jpg",
-  "events/IMG_9091.jpg"
+  "events/IMG_9091.jpg",
+  "events/IMG_9188.jpg",
 ];
 
 export const ImageCarousel = () => {
