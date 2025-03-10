@@ -5,6 +5,7 @@ import insta from '../assets/instasvg.svg'
 import mail from '../assets/mailsvg.svg'
 import discord from '../assets/discordsvg.svg'
 import { useEffect } from 'react'
+import { Footer } from '../components/footer';
 
 export const Join = () => {
   useEffect(() => {
@@ -74,6 +75,7 @@ export const Join = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   )
 }

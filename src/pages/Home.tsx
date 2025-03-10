@@ -9,6 +9,7 @@
 
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Footer } from '../components/footer';
 
 // animation expiration time (currently set to 5 minutes)
 const EXPIRATION_TIME = 5 * 60 * 1000
@@ -225,15 +226,7 @@ BBBBBBBBBBBBBBBBB           CCCCCCCCCCCCC       CCCCCCCCCCCCC SSSSSSSSSSSSSSS   
           </div>
         </div>
       </div>
-      
-      {/* bccss footer */}
-      <footer className="p-4 text-center text-xs sm:text-sm font-mono text-gray-800">
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
-          <span className="bg-gray-300 px-3 py-1 rounded border border-gray-600 shadow-sm hover:shadow-inner transition-shadow duration-200">
-            Made with <span className="text-red-500">♥</span> @ Boston College
-          </span>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   );
 };
