@@ -2,6 +2,7 @@ import about_club_photo from '/board/about_club_photo.jpg';
 import '../index.css';
 import boardMembers from '../assets/board_members.json';
 import { ImageCarousel } from "../../src/components/ImageCarousel";
+import { useEffect } from 'react'
 
 type BoardMember = {
     name: string;
@@ -14,6 +15,9 @@ type BoardMember = {
 const eBoardMembers: BoardMember[] = boardMembers;
 
 export const About = () => {
+    useEffect(() => {
+        document.title = 'BCCSS | About'
+    }, [])
     return (
         <div className="bg-backgroundBlack text-fontGray w-full min-h-screen mx-auto px-4 sm:px-8">
             {/* Navigation here */}
