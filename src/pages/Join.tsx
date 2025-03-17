@@ -4,8 +4,13 @@ import slack from '../assets/slacksvg.svg'
 import insta from '../assets/instasvg.svg'
 import mail from '../assets/mailsvg.svg'
 import discord from '../assets/discordsvg.svg'
+import { useEffect } from 'react'
+import { Footer } from '../components/footer';
 
 export const Join = () => {
+  useEffect(() => {
+    document.title = 'BCCSS | Join'
+  }, [])
   return (
     <div className="min-h-screen bg-backgroundBlack p-8">
       <h1 className="text-5xl text-primaryGreen font-bold text-center font-header mb-12 
@@ -70,6 +75,7 @@ export const Join = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   )
 }
