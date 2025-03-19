@@ -9,7 +9,7 @@
 
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Footer } from '../components/footer';
+import { Footer } from '../components/Footer';
 
 // animation expiration time (currently set to 5 minutes)
 const EXPIRATION_TIME = 5 * 60 * 1000

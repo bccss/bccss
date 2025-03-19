@@ -3,7 +3,7 @@ import '../index.css';
 import boardMembers from '../assets/board_members.json';
 import { ImageCarousel } from "../../src/components/ImageCarousel";
 import { useEffect } from 'react'
-import { Footer } from '../components/footer';
+import { Footer } from '../components/Footer';
 
 type BoardMember = {
     name: string;
