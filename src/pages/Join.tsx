@@ -3,9 +3,8 @@ import joinPhoto from '../assets/joinphoto.png'
 import slack from '../assets/slacksvg.svg'
 import insta from '../assets/instasvg.svg'
 import mail from '../assets/mailsvg.svg'
-import discord from '../assets/discordsvg.svg'
 import { useEffect } from 'react'
-import { Footer } from '../components/footer';
+import { Footer } from '../components/Footer';
 
 export const Join = () => {
   useEffect(() => {
