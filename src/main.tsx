@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { HashRouter, Routes, Route, useLocation} from "react-router-dom";
-import { Home, About, Join } from "./pages";
+import { BrowserRouter, Routes, Route, useLocation} from "react-router-dom";
+import { Home, About, Join, NotFound } from "./pages";
 import { Navbar } from "./components/Navbar";
 import './index.css'
 
@@ -17,6 +17,7 @@ const AppLayout = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/join" element={<Join />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
@@ -24,8 +25,8 @@ const AppLayout = () => {
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <HashRouter>
+    <BrowserRouter>
       <AppLayout />
-    </HashRouter>
+    </BrowserRouter>
   </StrictMode>,
 )
