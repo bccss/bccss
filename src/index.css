@@ -1,35 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
-    --color-primaryGreen: #35d2a1;
-    --color-secondaryTeal: #15B8A6;
-    --color-backgroundBlack: #060522;
-    --color-fontGray: #C0CAD7;
-
-    --font-header: 'Montserrat', sans-serif;
+    /* Modern Color Palette */
+    --color-primaryGreen: #FFFF00;
+    --color-secondaryTeal: #00d4ff;
+    --color-accentPurple: #8b5cf6;
+    --color-accentPink: #f472b6;
+    --color-backgroundBlack: #0a0a0f;
+    --color-surfaceGray: #1a1a24;
+    --color-borderGray: #2a2a3a;
+    --color-fontWhite: #ffffff;
+    --color-fontGray: #a1a1aa;
+    --color-fontDim: #71717a;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #f7f03b 0%, #e4892d 100%);
+    --gradient-secondary: linear-gradient(135deg, #8b5cf6 0%, #f472b6 100%);
+    --gradient-dark: linear-gradient(135deg, #0a0a0f 0%, #1a1a24 100%);
+    
+    /* Typography */
+    --font-header: 'Space Grotesk', sans-serif;
     --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    
+    /* Shadows */
+    --shadow-glow: 0 0 20px rgba(0, 255, 136, 0.3);
+    --shadow-glow-blue: 0 0 20px rgba(0, 212, 255, 0.3);
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 body {
     font-family: var(--font-body); 
-    background-color: var(--color-backgroundBlack);
-    color: var(--color-fontGray);
+    background: var(--gradient-dark);
+    color: var(--color-fontWhite);
+    line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-header);
+    font-weight: 600;
 }
 
+/* Custom Utility Classes */
 .bg-backgroundBlack {
     background-color: var(--color-backgroundBlack);
+}
+
+.bg-surfaceGray {
+    background-color: var(--color-surfaceGray);
 }
 
 .text-backgroundBlack {
     color: var(--color-backgroundBlack);
 }
+
+.text-fontWhite {
+    color: var(--color-fontWhite);
+}
+
 .text-fontGray {
     color: var(--color-fontGray);
+}
+
+.text-fontDim {
+    color: var(--color-fontDim);
 }
 
 .text-primaryGreen {
@@ -38,4 +73,84 @@ h1, h2, h3, h4, h5, h6 {
 
 .text-secondaryTeal {
     color: var(--color-secondaryTeal);
+}
+
+.text-accentPurple {
+    color: var(--color-accentPurple);
+}
+
+.text-accentPink {
+    color: var(--color-accentPink);
+}
+
+.border-borderGray {
+    border-color: var(--color-borderGray);
+}
+
+/* Gradient Text */
+.text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-gradient-secondary {
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Glow Effects */
+.glow-green {
+    box-shadow: var(--shadow-glow);
+}
+
+.glow-blue {
+    box-shadow: var(--shadow-glow-blue);
+}
+
+/* Card Styles */
+.card-modern {
+    background: var(--color-surfaceGray);
+    border: 1px solid var(--color-borderGray);
+    box-shadow: var(--shadow-card);
+    backdrop-filter: blur(10px);
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+    :root {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1024px) {
+    :root {
+        font-size: 16px;
+    }
+}
+
+/* Enhanced Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+    0%, 100% { 
+        box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+    }
+    50% { 
+        box-shadow: 0 0 30px rgba(0, 255, 136, 0.6);
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
 }
