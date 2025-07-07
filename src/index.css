@@ -124,11 +124,128 @@ h1, h2, h3, h4, h5, h6 {
     :root {
         font-size: 14px;
     }
+    
+    /* Ensure proper spacing on mobile */
+    .card-modern {
+        padding: 1rem;
+    }
+    
+    /* Better mobile text sizing */
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+    h4 { font-size: 1.125rem; }
+    
+    /* Mobile-friendly buttons */
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.875rem;
+    }
+    
+    /* Fix mobile viewport issues */
+    body {
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+    }
+    
+    /* Prevent content from being cut off */
+    .terminal-content {
+        max-height: calc(100vh - 200px);
+        max-height: calc(-webkit-fill-available - 200px);
+        overflow-y: auto;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 1023px) {
+    :root {
+        font-size: 15px;
+    }
+    
+    .card-modern {
+        padding: 1.5rem;
+    }
 }
 
 @media (min-width: 1024px) {
     :root {
         font-size: 16px;
+    }
+    
+    .card-modern {
+        padding: 2rem;
+    }
+}
+
+/* Mobile-first responsive utilities */
+.mobile-hidden {
+    display: none;
+}
+
+@media (min-width: 640px) {
+    .mobile-hidden {
+        display: block;
+    }
+}
+
+/* Improved mobile touch targets */
+@media (max-width: 640px) {
+    .touch-target {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Better mobile navigation */
+    .nav-item {
+        padding: 0.75rem 1rem;
+    }
+    
+    /* Mobile-friendly form elements */
+    input, textarea, select {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+}
+
+/* Improved scrolling on mobile */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Better focus states for accessibility */
+@media (prefers-reduced-motion: no-preference) {
+    *:focus {
+        outline: 2px solid var(--color-primaryGreen);
+        outline-offset: 2px;
+    }
+}
+
+/* Responsive container improvements */
+.container-responsive {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+    .container-responsive {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container-responsive {
+        padding: 0 2rem;
+    }
+}
+
+/* Enhanced mobile animations */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
 
@@ -153,4 +270,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .animate-pulse-glow {
     animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Mobile viewport fixes */
+@supports (-webkit-touch-callout: none) {
+    /* iOS Safari specific fixes */
+    .min-h-screen {
+        min-height: -webkit-fill-available;
+    }
+    
+    .h-screen {
+        height: -webkit-fill-available;
+    }
 }

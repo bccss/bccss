@@ -41,14 +41,8 @@ export const NotFound = () => {
     };
   }, []);
 
-  const suggestions = [
-    { path: '/', label: 'Home', command: 'cd ~' },
-    { path: '/about', label: 'About', command: 'cat about.md' },
-    { path: '/join', label: 'Join', command: './join.sh' },
-  ];
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-surface-black via-surface-gray to-surface-black">
+    <div className="min-h-screen bg-gradient-to-br from-surface-black via-surface-gray to-surface-black pt-20">
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-red-500/5 to-accent-purple/5"></div>
@@ -67,129 +61,110 @@ export const NotFound = () => {
         ))}
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
         {/* Terminal Window */}
         <div className="max-w-4xl mx-auto">
-          <div className="card-modern rounded-2xl overflow-hidden shadow-2xl border border-red-500/30">
+          <div className="card-modern rounded-2xl overflow-hidden shadow-2xl border border-surface-border">
             
             {/* Terminal Header */}
-            <div className="bg-gradient-to-r from-surface-gray to-surface-border px-6 py-4 flex items-center justify-between border-b border-red-500/30">
-              <div className="flex space-x-3">
-                <div className="w-3 h-3 rounded-full bg-red-500 animate-pulse"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500/50"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500/50"></div>
+            <div className="bg-gradient-to-r from-surface-gray to-surface-border px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between border-b border-surface-border">
+              <div className="flex space-x-2 sm:space-x-3">
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500 hover:bg-red-400 transition-colors cursor-pointer"></div>
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500 hover:bg-yellow-400 transition-colors cursor-pointer"></div>
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500 hover:bg-green-400 transition-colors cursor-pointer"></div>
               </div>
               <div className="text-center">
-                <span className="font-mono text-sm text-red-400">error@terminal:~$</span>
+                <span className="font-mono text-xs sm:text-sm text-text-white">error@terminal:~$</span>
               </div>
-              <div className="w-12"></div>
+              <div className="w-8 sm:w-12"></div>
             </div>
 
             {/* Terminal Content */}
-            <div className="bg-gradient-to-b from-surface-black to-surface-gray p-6 sm:p-8 lg:p-10 min-h-[60vh]">
+            <div className="bg-gradient-to-b from-surface-black to-surface-gray p-4 sm:p-6 lg:p-8">
               
-              {/* Error Command */}
-              <div className="flex items-center gap-2 mb-8 font-mono text-lg">
-                <span className="text-red-400">user@bccss</span>
+              {/* Command Line */}
+              <div className="flex items-center gap-2 mb-6 sm:mb-8 font-mono text-sm sm:text-base">
+                <span className="text-red-400">error@bccss</span>
                 <span className="text-text-gray">:</span>
                 <span className="text-accent-purple">~</span>
                 <span className="text-text-gray">$</span>
-                <span className={`text-red-400 ${glitchActive ? 'animate-pulse' : ''}`}>
+                <span className="text-primary-green">
                   {text}
                   {showCursor && <span className="animate-pulse">█</span>}
                 </span>
               </div>
 
-              {/* 404 Content */}
-              <div className="space-y-8 animate-fadeIn">
+              {/* Error Content */}
+              <div className="space-y-6 sm:space-y-8">
                 
-                {/* ASCII Art 404 */}
+                {/* 404 Display */}
                 <div className="text-center">
-                  <div className={`font-mono text-4xl sm:text-6xl lg:text-8xl font-bold mb-6 ${glitchActive ? 'animate-bounce' : ''}`}>
-                    <span className="text-red-500">4</span>
+                  <div className={`font-mono text-6xl sm:text-8xl lg:text-9xl font-bold mb-4 sm:mb-6 ${
+                    glitchActive ? 'animate-bounce' : ''
+                  }`}>
+                    <span className="text-red-400">4</span>
                     <span className="text-primary-green">0</span>
                     <span className="text-accent-purple">4</span>
                   </div>
-                  <h1 className="text-2xl sm:text-3xl lg:text-4xl font-header font-bold text-text-white mb-4">
-                    <span className="text-red-400">Error:</span> Page Not Found
+                  <h1 className="text-xl sm:text-2xl lg:text-3xl font-header font-bold text-text-white mb-3 sm:mb-4">
+                    Page Not Found
                   </h1>
-                  <p className="text-lg text-text-gray max-w-2xl mx-auto mb-8">
-                    Looks like you've ventured into uncharted territory. This page doesn't exist in our codebase!
+                  <p className="text-sm sm:text-base text-text-gray max-w-md mx-auto leading-relaxed">
+                    Looks like this page got lost in cyberspace. Let's get you back to familiar territory.
                   </p>
                 </div>
 
-                {/* Error Details */}
-                <div className="bg-surface-gray/30 rounded-xl p-6 border border-red-500/20 max-w-2xl mx-auto">
-                  <div className="font-mono text-sm space-y-2">
-                    <div className="text-red-400">
-                      <span className="text-text-gray">└─</span> HTTP Status: <span className="text-red-300">404</span>
-                    </div>
-                    <div className="text-red-400">
-                      <span className="text-text-gray">└─</span> Error Type: <span className="text-red-300">ENOENT</span>
-                    </div>
-                    <div className="text-red-400">
-                      <span className="text-text-gray">└─</span> Message: <span className="text-red-300">No such file or directory</span>
-                    </div>
-                    <div className="text-yellow-400 mt-4">
-                      <span className="text-text-gray">└─</span> Suggestion: <span className="text-yellow-300">Try one of the commands below</span>
-                    </div>
-                  </div>
+                {/* Navigation Options */}
+                <div className="grid sm:grid-cols-2 gap-3 sm:gap-4 max-w-lg mx-auto">
+                  {[
+                    { path: '/', label: 'Home', icon: '🏠', description: 'Back to base' },
+                    { path: '/about', label: 'About', icon: '📖', description: 'Learn about us' },
+                    { path: '/join', label: 'Join', icon: '🚀', description: 'Get involved' },
+                    { path: 'javascript:history.back()', label: 'Go Back', icon: '⬅️', description: 'Previous page' }
+                  ].map((link, index) => (
+                    <Link
+                      key={index}
+                      to={link.path}
+                      className="group relative rounded-xl p-3 sm:p-4 hover:scale-105 transition-all duration-300 border border-surface-border hover:border-primary-green/50 animate-slideUp bg-surface-gray/30 hover:bg-surface-gray/50"
+                      style={{ animationDelay: `${index * 100}ms` }}
+                    >
+                      <div className="flex items-center gap-2 sm:gap-3">
+                        <span className="text-lg sm:text-xl">{link.icon}</span>
+                        <div>
+                          <h3 className="text-sm sm:text-base font-header font-semibold text-text-white group-hover:text-primary-green transition-colors">
+                            {link.label}
+                          </h3>
+                          <p className="text-xs sm:text-sm text-text-gray group-hover:text-text-white transition-colors">
+                            {link.description}
+                          </p>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
                 </div>
 
-                {/* Navigation Suggestions */}
-                <div className="max-w-3xl mx-auto">
-                  <p className="text-text-gray font-mono text-sm mb-6 text-center">
-                    <span className="text-primary-teal">$</span> Available commands:
+                {/* Fun Terminal Commands */}
+                <div className="border-t border-surface-border pt-4 sm:pt-6">
+                  <p className="text-text-gray font-mono text-xs sm:text-sm mb-3 sm:mb-4 text-center">
+                    <span className="text-primary-teal">$</span> helpful-commands --list
                   </p>
-                  <div className="grid sm:grid-cols-3 gap-4">
-                    {suggestions.map((suggestion, index) => (
-                      <Link
-                        key={index}
-                        to={suggestion.path}
-                        className="group card-modern rounded-xl p-6 hover:scale-105 transition-all duration-300 border border-surface-border hover:border-primary-green/30 animate-slideUp"
-                        style={{ animationDelay: `${index * 200}ms` }}
-                      >
-                        <div className="flex items-center gap-2 mb-3 font-mono text-sm">
-                          <span className="text-primary-teal">$</span>
-                          <span className="text-primary-green">{suggestion.command}</span>
+                  <div className="grid grid-cols-2 gap-2 sm:gap-3 max-w-md mx-auto">
+                    {[
+                      { command: 'cd /', description: 'Go home' },
+                      { command: 'ls -la', description: 'List pages' },
+                      { command: 'pwd', description: 'Current location' },
+                      { command: 'history', description: 'Go back' }
+                    ].map((cmd, index) => (
+                      <div key={index} className="bg-surface-gray/30 rounded-lg p-2 sm:p-3 text-center">
+                        <div className="font-mono text-xs sm:text-sm text-primary-green mb-1">
+                          {cmd.command}
                         </div>
-                        <h3 className="text-lg font-header font-semibold text-text-white mb-2 group-hover:text-primary-green transition-colors">
-                          {suggestion.label}
-                        </h3>
-                        <div className="flex items-center text-primary-green opacity-0 group-hover:opacity-100 transition-opacity">
-                          <span className="text-sm font-medium">Execute</span>
-                          <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
+                        <div className="text-xs text-text-gray">
+                          {cmd.description}
                         </div>
-                      </Link>
+                      </div>
                     ))}
                   </div>
-                </div>
-
-                {/* Fun Interactive Element */}
-                <div className="text-center pt-8 border-t border-surface-border">
-                  <div className="inline-block">
-                    <button
-                      onClick={() => window.history.back()}
-                      className="group px-6 py-3 bg-gradient-to-r from-red-500/20 to-accent-purple/20 border border-red-500/30 text-text-white font-mono rounded-xl hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-red-500/25"
-                    >
-                      <span className="flex items-center gap-2">
-                        <svg className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                        </svg>
-                        history.back()
-                      </span>
-                    </button>
-                  </div>
-                </div>
-
-                {/* Easter Egg */}
-                <div className="text-center mt-8">
-                  <p className="font-mono text-xs text-text-dim">
-                    <span className="text-primary-teal">// </span>
-                    Fun fact: HTTP 404 was named after room 404 at CERN where the web was born! 🌐
-                  </p>
                 </div>
 
               </div>
