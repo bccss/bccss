@@ -7,8 +7,9 @@ export const Navbar = () => {
 
   const navItems = [
     { path: '/', label: 'Home' },
+    { path: '/events', label: 'Events' },
+    { path: '/connect', label: 'Connect' },
     { path: '/about', label: 'About' },
-    { path: '/join', label: 'Join' },
   ];
 
   const isActivePath = (path: string) => {

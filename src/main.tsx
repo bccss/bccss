@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route, useLocation} from "react-router-dom";
-import { Home, About, Join, NotFound } from "./pages";
+import { Home, About, Connect, Events, NotFound } from "./pages";
 import { Navbar } from "./components/Navbar";
 import { ScrollToTop } from "./components/ScrollToTop";
 import './index.css'
@@ -17,8 +17,9 @@ const AppLayout = () => {
       {showNavbar && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/connect" element={<Connect />} />
         <Route path="/about" element={<About />} />
-        <Route path="/join" element={<Join />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

@@ -31,13 +31,13 @@ export const About = () => {
                             <span className="text-gradient-primary">About</span> BCCSS
                         </h1>
                         <p className="text-base sm:text-lg lg:text-xl text-text-gray max-w-3xl mx-auto leading-relaxed">
-                            Empowering the next generation of technologists at Boston College
+                            Boston College's premier computer science community
                         </p>
                     </div>
                 </div>
             </div>
 
-            {/* Mission Section */}
+            {/* Mission Section - Simplified */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
                 <div className="card-modern rounded-2xl p-6 sm:p-8 lg:p-12">
                     <div className="flex items-center mb-6 sm:mb-8">
@@ -54,11 +54,32 @@ export const About = () => {
                     <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
                         <div className="space-y-4 sm:space-y-6">
                             <p className="text-base sm:text-lg text-text-gray leading-relaxed">
-                                The Boston College Computer Science Society (BCCSS) is dedicated to helping students interested in technology and entrepreneurship achieve their goals. We host events such as guest lectures, workshops, hackathons, collaborative projects, and more.
+                                BCCSS helps BC students excel in technology and entrepreneurship through workshops, hackathons, guest lectures, and collaborative projects.
                         </p>
-                            <p className="text-base sm:text-lg text-text-gray leading-relaxed">
-                            We work closely with the Computer Science department at BC to create a better environment for students to learn and find new opportunities. Further, we collaborate with many departments and clubs in the Carroll School of Management at BC to encourage entrepreneurship.
-                        </p>
+                            
+                            {/* What We Do - Bullet Points */}
+                            <div className="space-y-2">
+                                <h3 className="text-lg font-header font-semibold text-text-white mb-3">What We Do:</h3>
+                                <ul className="space-y-2 text-text-gray">
+                                    <li className="flex items-center gap-2">
+                                        <span className="text-primary-green">•</span>
+                                        <span className="text-sm sm:text-base">Host technical workshops and coding sessions</span>
+                                    </li>
+                                    <li className="flex items-center gap-2">
+                                        <span className="text-primary-teal">•</span>
+                                        <span className="text-sm sm:text-base">Organize hackathons with cash prizes</span>
+                                    </li>
+                                    <li className="flex items-center gap-2">
+                                        <span className="text-accent-purple">•</span>
+                                        <span className="text-sm sm:text-base">Connect students with industry professionals</span>
+                                    </li>
+                                    <li className="flex items-center gap-2">
+                                        <span className="text-accent-pink">•</span>
+                                        <span className="text-sm sm:text-base">Support entrepreneurship and startup projects</span>
+                                    </li>
+                                </ul>
+                            </div>
+
                             <div className="flex flex-wrap gap-2 sm:gap-3 pt-4">
                                 <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-primary-green/10 text-primary-green rounded-full text-xs sm:text-sm font-medium border border-primary-green/20">
                                     Technology
@@ -84,48 +105,47 @@ export const About = () => {
                 </div>
             </div>
 
-            {/* Stats Section */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-                <div className="text-center mb-8 sm:mb-12">
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-header font-bold text-gradient-secondary mb-3 sm:mb-4">
+            {/* Stats Section - Smaller and Less Prominent */}
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+                <div className="text-center mb-6 sm:mb-8">
+                    <h2 className="text-xl sm:text-2xl lg:text-3xl font-header font-bold text-gradient-secondary mb-2 sm:mb-3">
                         Our Impact
                     </h2>
-                    <p className="text-base sm:text-lg text-text-gray">Making a difference in the BC tech community</p>
                 </div>
                 
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                     {[
                         { number: "500+", label: "Members", color: "primary-green", icon: "👥" },
-                        { number: "30+", label: "Events Hosted", color: "primary-teal", icon: "🎯" },
-                        { number: "9", label: "24-hour Hackathons", color: "accent-purple", icon: "⚡" },
-                        { number: "$5k+", label: "In Prizes Given", color: "accent-pink", icon: "🏆" }
+                        { number: "30+", label: "Events", color: "primary-teal", icon: "🎯" },
+                        { number: "9", label: "Hackathons", color: "accent-purple", icon: "⚡" },
+                        { number: "$5k+", label: "Prizes", color: "accent-pink", icon: "🏆" }
                     ].map((stat, index) => (
                         <div
                             key={index}
-                            className="group card-modern rounded-2xl p-4 sm:p-6 text-center hover:scale-105 transition-all duration-300 animate-slideUp"
+                            className="group card-modern rounded-xl p-3 sm:p-4 text-center hover:scale-105 transition-all duration-300 animate-slideUp"
                             style={{ animationDelay: `${index * 100}ms` }}
                         >
-                            <div className="text-3xl sm:text-4xl mb-2 sm:mb-3 animate-float" style={{ animationDelay: `${index * 200}ms` }}>
+                            <div className="text-2xl sm:text-3xl mb-1 sm:mb-2">
                                 {stat.icon}
                             </div>
-                            <div className={`text-2xl sm:text-3xl lg:text-4xl font-bold mb-1 sm:mb-2 text-${stat.color}`}>
+                            <div className={`text-lg sm:text-xl lg:text-2xl font-bold mb-1 text-${stat.color}`}>
                                 {stat.number}
                             </div>
-                            <div className="text-text-gray font-medium text-sm sm:text-base">
+                            <div className="text-text-gray font-medium text-xs sm:text-sm">
                                 {stat.label}
                             </div>
                     </div>
                     ))}
                 </div>
-                    </div>
+            </div>
 
-            {/* Image Carousel Section */}
+            {/* Image Carousel Section - Simplified */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-                <div className="text-center mb-8 sm:mb-12">
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-header font-bold text-gradient-primary mb-3 sm:mb-4">
-                        Our Events
+                <div className="text-center mb-6 sm:mb-8">
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-header font-bold text-gradient-primary mb-2 sm:mb-3">
+                        Event Highlights
                     </h2>
-                    <p className="text-base sm:text-lg text-text-gray">Capturing moments from our amazing community</p>
+                    <p className="text-base sm:text-lg text-text-gray">Recent moments from our community</p>
                 </div>
                 <div className="relative">
                     <div className="absolute -inset-4 bg-gradient-to-r from-primary-green/20 to-primary-teal/20 rounded-3xl blur-xl opacity-30"></div>
@@ -135,20 +155,19 @@ export const About = () => {
                 </div>
             </div>
 
-            {/* Board Members Section */}
+            {/* Board Members Section - Streamlined */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-                <div className="text-center mb-12 sm:mb-16">
-                    <div className="flex items-center justify-center mb-4 sm:mb-6">
+                <div className="text-center mb-8 sm:mb-12">
+                    <div className="flex items-center justify-center mb-3 sm:mb-4">
                         <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-r from-accent-purple to-accent-pink flex items-center justify-center mr-3 sm:mr-4">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-5 h-5 sm:w-6 sm:h-6 text-surface-black">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
                     </svg>
                         </div>
                         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-header font-bold text-gradient-secondary">
-                    Meet the Board
+                    Our Team
                 </h2>
                     </div>
-                    <p className="text-base sm:text-lg text-text-gray">The passionate leaders driving our mission forward</p>
                 </div>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
