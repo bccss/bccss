@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
+import { EmailSubscription } from '../components/EmailSubscription';
 
 export const Home = () => {
   useEffect(() => {
@@ -50,6 +51,9 @@ export const Home = () => {
           </div>
         </div>
       </div>
+
+      {/* Email Subscription Section */}
+      <EmailSubscription />
 
       {/* Primary Action Cards */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
