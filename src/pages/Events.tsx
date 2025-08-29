@@ -102,10 +102,10 @@ export const Events = () => {
           {/* Example events - these would be dynamic in a real implementation */}
           {[
             {
-              title: "First General Meeting",
-              date: "Date TBD",
-              location: "Room TBD",
-              type: "General Meeting",
+              title: "First General Meeting: Pathways in Computer Science",
+              date: "September 3rd, 2025",
+              location: "245 Beacon Room 229",
+              type: "Join us to learn about the club and career pathways with your computer science major/minor",
               color: "primary-green"
             }
           ].map((event, index) => (
