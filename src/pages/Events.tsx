@@ -107,6 +107,13 @@ export const Events = () => {
               location: "245 Beacon Room 229",
               type: "Join us to learn about the club and career pathways with your computer science major/minor",
               color: "primary-green"
+            },
+            {
+              title: "Second General Meeting: Debugging the Job Hunt",
+              date: "September 23rd, 2025",
+              location: "Higgins Hall 225",
+              type: "Resumes, LinkedIn, networking, interviews, and more—with advice from Matt Cruz who was a former Disney Software Engineering intern",
+              color: "primary-teal"
             }
           ].map((event, index) => (
             <div
