@@ -218,7 +218,11 @@ We use conventional commits:
 
 ## 🚀 Deployment
 
-The site is automatically deployed to [bccss.co](https://bccss.co) using GitHub Pages.
+The site is automatically deployed to [bccss.dev](https://bccss.dev) using Vercel.
+
+vercel account : the club gmail
+
+domain via namecheap, also via club gmail. sorry if is a little fucked.
 
 ### Manual Deployment
 
