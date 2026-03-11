@@ -7,7 +7,7 @@
   
   *Empowering the next generation of technologists and innovators*
   
-  [![Live Site](https://img.shields.io/badge/🌐_Live_Site-bccss.co-00D4AA?style=for-the-badge)](https://bccss.co)
+  [![Live Site](https://img.shields.io/badge/🌐_Live_Site-bccss.dev-00D4AA?style=for-the-badge)](https://bccss.dev)
   [![React](https://img.shields.io/badge/React-19.0.0-61DAFB?style=for-the-badge&logo=react)](https://reactjs.org/)
   [![TypeScript](https://img.shields.io/badge/TypeScript-5.7.2-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
   [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0.6-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
