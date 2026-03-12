@@ -222,31 +222,12 @@ The site is automatically deployed to [bccss.dev](https://bccss.dev) using Verce
 
 vercel account : the club gmail
 
-domain via namecheap, also via club gmail. sorry if is a little fucked.
-
-### Manual Deployment
-
-```bash
-npm run deploy
-```
-
-This will:
-1. Build the production version
-2. Deploy to the `gh-pages` branch
-3. Update the live site
+domain via namecheap, also via club gmail. sorry if a little fucked.
 
 ---
 
-## 🎯 Roadmap
-
-### 🔄 Current Sprint
-- [ ] Add event registration system
-- [ ] Implement member directory
-- [ ] Add blog/news section
-
 ### 🚀 Future Features
 - [ ] Dark/light theme toggle
-- [ ] Member login portal
 - [ ] Event calendar integration
 - [ ] Newsletter signup
 - [ ] Job board integration
