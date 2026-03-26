@@ -25,7 +25,7 @@ export default async function handler(req, res) {
 
     // Get MailChimp credentials from environment variables
     const MAILCHIMP_API_KEY = process.env.MAILCHIMP_API_KEY;
-    const MAILCHIMP_LIST_ID = process.env.MAILCHIMP_LIST_ID;
+    const MAILCHIMP_LIST_ID = process.env.MAILCHIMP_AUDIENCE_ID;
     const MAILCHIMP_SERVER_PREFIX = process.env.MAILCHIMP_SERVER_PREFIX; // e.g., 'us18'
 
     if (!MAILCHIMP_API_KEY || !MAILCHIMP_LIST_ID || !MAILCHIMP_SERVER_PREFIX) {
@@ -50,7 +50,7 @@ export default async function handler(req, res) {
     const response = await fetch(url, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${MAILCHIMP_API_KEY}`,
+        'Authorization': `Basic ${Buffer.from(`anystring:${MAILCHIMP_API_KEY}`).toString('base64')}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
